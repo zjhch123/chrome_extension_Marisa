@@ -1,0 +1,50 @@
+<html>
+<meta charset="utf-8">
+<style>
+.container {
+  width: 300px;
+  font-size: 14px;
+  background-image: url('resource/reimu.png');
+  background-size: auto 100%;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+}
+.u-tip {
+  text-align: center;
+}
+.save-btn {
+  display: block;
+  width: 80px;
+  line-height: 20px;
+  margin: auto;
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  cursor: pointer;
+}
+.save-btn:hover {
+  background-color: white;
+  color: black;
+}
+</style>
+<div class="container">
+  <p class="u-tip">DA☆ZE~</p>
+  <div>
+    <p>是否显示</p>
+    <label class="option"><input type="radio" name="status" value="on">显示</label>
+    <label class="option"><input type="radio" name="status" value="off">关闭</label>
+  </div>
+  <div>
+    <p>位置</p>
+    <label class="option"><input type="radio" name="position" value="left">左</label>
+    <label class="option"><input type="radio" name="position" value="right">右</label>
+  </div>
+  <a href="#" class="save-btn J_save">保存</a>
+</div>
+<script src="js/popup.js"></script>
+</html>
+
+

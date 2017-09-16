@@ -1,0 +1,25 @@
+{  
+  "name": "Marisa With You",  
+  "version": "0.3",
+  "manifest_version": 2,  
+  "description": "",  
+  "permissions": [ "contentSettings", "tabs", "storage"],
+  "web_accessible_resources": ["resource/marisa.png", "resource/reimu.png"],
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["js/marisa.js"]
+    }
+  ],
+  "run_at": "document_end",
+  "browser_action": {  
+    "default_icon": "resource/icon.png",
+    "default_title": "Marisa With You",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "resource/icon16.png",
+    "48": "resource/icon48.png",
+    "128": "resource/icon128.png"
+  }
+} 
