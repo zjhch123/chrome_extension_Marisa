@@ -2,9 +2,10 @@
   const module = {
     init: function() {
       const self = this;
-      chrome.storage.sync.get({position: 'right', status: 'on'}, function(items) {
+      chrome.storage.sync.get({position: 'right', status: 'on', opacity: '0.6'}, function(items) {
         self.position = items.position;
         self.status = items.status;
+        self.opacity = items.opacity;
         if (self.status != 'on') {
           self.removeMarisa();
           return;
@@ -47,11 +48,11 @@
         'bottom': '0',
         [self.position]: '0',
         'border': 'none',
-        'opacity': '.6',
+        'opacity': self.opacity,
         'pointer-events': 'none',
         'width': '162px',
         'height': '298px',
-        'z-index': '9999',
+        'z-index': '11111',
       };
       if (self.position === 'left') {
         style['transform'] = 'rotateY(180deg)';
@@ -68,7 +69,8 @@
       });
       self.removeMarisa();
       setTimeout(function() {
-        document.body.append(Marisa);
+        // document.body.append(Marisa);
+        document.documentElement.insertBefore(Marisa, document.body);
       }, 0);
     },
     removeMarisa: function() {
